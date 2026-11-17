@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.world-check/
+demo/STRUCK.md
+00 — INDEX.md

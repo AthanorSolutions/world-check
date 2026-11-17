@@ -1,0 +1,27 @@
+# world-check config. Copy to your project root as probes.toml, edit, then run /world-check:trust.
+
+[scan]
+paths = ["."]                 # folders scanned for <!-- PROBE ... --> comments in .md files
+exclude = ["archive"]         # folder names or relative file paths to skip
+budget_seconds = 8            # session start never waits longer than this
+
+[strike]
+log = "STRUCK.md"             # where struck claims are appended (never scanned for probes)
+
+# Probes that do not belong next to a sentence, and the only place cmd_exit0 is allowed.
+[[probe]]
+id = "tests-pass"
+check = "cmd_exit0"
+cmd = "python -m pytest -q"
+timeout = 60
+ttl = "1d"
+claim = "the test suite passes"
+
+[[probe]]
+id = "api-version"
+check = "json_path_equals"
+url = "https://api.github.com/repos/python/cpython"
+path = "default_branch"
+expect = "main"
+ttl = "7d"
+claim = "CPython's default branch is main"

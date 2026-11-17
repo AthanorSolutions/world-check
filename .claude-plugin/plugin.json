@@ -1,0 +1,8 @@
+{
+  "name": "world-check",
+  "version": "0.1.0",
+  "description": "Notes that carry their own falsifier. Every claim about live state gets a probe next to it; stale or contradicted claims are flagged at session start, before Claude acts on them.",
+  "author": { "name": "Athanor Solutions" },
+  "license": "MIT",
+  "keywords": ["memory", "verification", "notes", "obsidian", "stale", "probes", "hooks"]
+}

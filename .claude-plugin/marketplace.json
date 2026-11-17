@@ -1,0 +1,13 @@
+{
+  "name": "world-check",
+  "owner": { "name": "Athanor Solutions" },
+  "metadata": { "description": "Notes that carry their own falsifier." },
+  "plugins": [
+    {
+      "name": "world-check",
+      "description": "Probes beside every live-state claim in your notes; stale or contradicted claims flagged at session start.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

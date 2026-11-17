@@ -1,0 +1,16 @@
+{
+  "description": "world-check: re-run expired probes at session start; silent when every claim holds",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/run.sh\" session-start",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

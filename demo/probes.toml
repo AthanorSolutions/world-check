@@ -1,0 +1,11 @@
+# Demo project. From this folder: python ../scripts/wc.py trust, then python ../scripts/wc.py check
+[scan]
+paths = ["."]
+budget_seconds = 8
+
+[[probe]]
+id = "python-311"
+check = "cmd_exit0"
+cmd = "python -c \"import sys; sys.exit(sys.version_info < (3, 11))\""
+ttl = "7d"
+claim = "this machine has Python 3.11+"
